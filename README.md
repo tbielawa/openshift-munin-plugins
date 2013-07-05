@@ -66,6 +66,7 @@ On a host you want to gather data to make charts from:
 1. Copy the plugin to the appropriate directory (usually that's `/usr/share/munin/plugins/`, but YMMV)
 2. Link the plugin in `/etc/munin/plugins`: `cd /etc/munin/plugins; ln -s /usr/share/munin/plugins/PLUGIN_NAME`
 3. Install the appropriate plugin configuration file in `/etc/munin/plugin-conf.d`
+4. Restart the `munin-node` service
 
 ## Special Instructions
 
@@ -81,4 +82,3 @@ created by the `openshift_gears_present` plugin.
 
 
 ![Gears Present Chart](https://raw.github.com/tbielawa/openshift-munin-plugins/master/gears_present.png)
-
