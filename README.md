@@ -80,5 +80,5 @@ names are prefixed with the plugin name. That is to say:
 created by the `openshift_gears_present` plugin.
 
 
-__TODO: Inline some example PNGs here__
+![Gears Present Chart](https://raw.github.com/tbielawa/openshift-munin-plugins/master/gears_present.png)
 
