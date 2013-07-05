@@ -81,4 +81,4 @@ created by the `openshift_gears_present` plugin.
 
 
 __TODO: Inline some example PNGs here__
-r
+
