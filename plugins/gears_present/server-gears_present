@@ -1,0 +1,67 @@
+# Example configuration file for making multigraph charts with the
+# openshift_gears_present Munin plugin.
+#
+# Whats not here? An example of how to create a chart of the *sum* of
+# all apps present in any given district. Pull requests accepted.
+#
+# Interested in doing more with combined charts? Check out:
+#
+# - http://munin-monitoring.org/wiki/LoaningData
+# - http://munin-monitoring.org/wiki/Combined_examples
+
+################################################################################
+# Multigraph charts for small, medium, and large districts
+#
+# No magic to see here, move along, move along. What's
+# important/different about the nodes-{small,medium,large} charts is
+# the hosts you list in the 'graph_order' directive.
+
+[nodes-small.ose-poc]
+    address 127.0.0.1
+    use_node_name no
+    update no
+    smallprivateapps.update no
+    smallprivateapps.graph_title Apps Per Node - Small Gears District
+    smallprivateapps.graph_vlabel Apps
+    smallprivateapps.graph_scale no
+    smallprivateapps.graph_category OpenShift
+    smallprivateapps.graph_order node01.ose-poc=node01.ose-poc:openshift_gears_present.gears_present node02.ose-poc=node02.ose-poc:openshift_gears_present.gears_present node03.ose-poc=node03.ose-poc:openshift_gears_present.gears_present node04.ose-poc=node04.ose-poc:openshift_gears_present.gears_present
+
+[nodes-medium.ose-poc]
+    address 127.0.0.1
+    use_node_name no
+    update no
+    mediumprivateapps.update no
+    mediumprivateapps.graph_title Apps Per Node - Medium Gears District
+    mediumprivateapps.graph_vlabel Apps
+    mediumprivateapps.graph_scale no
+    mediumprivateapps.graph_category OpenShift
+    mediumprivateapps.graph_order node15.ose-poc=node15.ose-poc:openshift_gears_present.gears_present node16.ose-poc=node16.ose-poc:openshift_gears_present.gears_present node17.ose-poc=node17.ose-poc:openshift_gears_present.gears_present
+
+[nodes-large.ose-poc]
+    address 127.0.0.1
+    use_node_name no
+    update no
+    largeprivateapps.update no
+    largeprivateapps.graph_title Apps Per Node - Large Gears District
+    largeprivateapps.graph_vlabel Apps
+    largeprivateapps.graph_scale no
+    largeprivateapps.graph_category OpenShift
+    largeprivateapps.graph_order node21.ose-poc=node21.ose-poc:openshift_gears_present.gears_present node22.ose-poc=node22.ose-poc:openshift_gears_present.gears_present
+
+################################################################################
+# Multigraph chart of *all* nodes in *all* districts
+#
+# As in the previous charts: no magic. You just list *all* of your
+# nodes in the 'graph_order' directive.
+
+[nodes-all.ose-poc]
+    address 127.0.0.1
+    use_node_name no
+    update no
+    allappscombined.update no
+    allappscombined.graph_title Apps Per Node
+    allappscombined.graph_vlabel Apps
+    allappscombined.graph_scale no
+    allappscombined.graph_category OpenShift
+    allappscombined.graph_order node01.ose-poc=node01.ose-poc:openshift_gears_present.gears_present node02.ose-poc=node02.ose-poc:openshift_gears_present.gears_present node03.ose-poc=node03.ose-poc:openshift_gears_present.gears_present node04.ose-poc=node04.ose-poc:openshift_gears_present.gears_present node101.ose-poc=node101.ose-poc:openshift_gears_present.gears_present node102.ose-poc=node102.ose-poc:openshift_gears_present.gears_present node103.ose-poc=node103.ose-poc:openshift_gears_present.gears_present node104.ose-poc=node104.ose-poc:openshift_gears_present.gears_present node105.ose-poc=node105.ose-poc:openshift_gears_present.gears_present node106.ose-poc=node106.ose-poc:openshift_gears_present.gears_present node107.ose-poc=node107.ose-poc:openshift_gears_present.gears_present node108.ose-poc=node108.ose-poc:openshift_gears_present.gears_present node109.ose-poc=node109.ose-poc:openshift_gears_present.gears_present node15.ose-poc=node15.ose-poc:openshift_gears_present.gears_present node16.ose-poc=node16.ose-poc:openshift_gears_present.gears_present node17.ose-poc=node17.ose-poc:openshift_gears_present.gears_present node21.ose-poc=node21.ose-poc:openshift_gears_present.gears_present node22.ose-poc=node22.ose-poc:openshift_gears_present.gears_present
